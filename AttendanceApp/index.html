@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Attendance App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1. USER AUTHENTICATION - Login Screen -->
+    <div id="loginPage" class="container">
+        <h2>University Attendance App</h2>
+        <div class="card">
+            <h3>Login</h3>
+            <input type="text" id="loginUser" placeholder="Username">
+            <input type="password" id="loginPass" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p>New user? <span onclick="showRegister()">Register here</span></p>
+        </div>
+    </div>
+
+    <!-- Register Screen -->
+    <div id="registerPage" class="container hidden">
+        <h2>Register</h2>
+        <div class="card">
+            <input type="text" id="regUser" placeholder="Username">
+            <input type="password" id="regPass" placeholder="Password">
+            <select id="regRole">
+                <option value="">Select Role</option>
+                <option value="student">Student</option>
+                <option value="instructor">Instructor</option>
+            </select>
+            <button onclick="register()">Register</button>
+            <p>Already have account? <span onclick="showLogin()">Login here</span></p>
+        </div>
+    </div>
+
+    <!-- 4. UI DESIGN - Student Dashboard -->
+    <div id="studentDashboard" class="container hidden">
+        <div class="header">
+            <h2>Student Dashboard</h2>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div class="card">
+            <h3>Welcome, <span id="studentName"></span></h3>
+            <h4>2. STUDENT FEATURES - Mark Attendance</h4>
+            <select id="courseSelect"></select>
+            <button onclick="markAttendance()">Mark Present</button>
+            <button onclick="viewMyAttendance()">View My Attendance</button>
+        </div>
+        <div id="studentRecords" class="card"></div>
+    </div>
+
+    <!-- 3. INSTRUCTOR FEATURES - Instructor Dashboard -->
+    <div id="instructorDashboard" class="container hidden">
+        <div class="header">
+            <h2>Instructor Dashboard</h2>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div class="card">
+            <h3>Welcome, <span id="instructorName"></span></h3>
+            <h4>Manage Courses</h4>
+            <input type="text" id="newCourse" placeholder="Course Name">
+            <button onclick="addCourse()">Add Course</button>
+            <button onclick="viewAllAttendance()">View All Attendance</button>
+            <button onclick="viewStudents()">View Students</button>
+        </div>
+        <div id="instructorRecords" class="card"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
